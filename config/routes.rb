@@ -1,5 +1,7 @@
 DotHack::Application.routes.draw do
-  devise_for :users
+  devise_scope :user do
+    get 'login' => "users#login", :as => "login", :defaults=>{:format=>"json"}
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
